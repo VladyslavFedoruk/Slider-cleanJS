@@ -4,7 +4,7 @@ const nextButton = document.querySelector('.next');
 
 let currentPosition = 0;
 
-function showSlide(index) {
+function show(index) {
     slides.forEach((slide, i) => {
         if (i === index) {
             slide.classList.toggle('active');
@@ -16,12 +16,12 @@ function showSlide(index) {
 
 prevButton.addEventListener('click', () => {
     currentPosition = (currentPosition - 1 + slides.length) % slides.length;
-    showSlide(currentPosition);
+    show(currentPosition);
 });
 
 nextButton.addEventListener('click', () => {
     currentPosition = (currentPosition + 1) % slides.length;
-    showSlide(currentPosition);
+    show(currentPosition);
 });
 
-showSlide(currentPosition);
+show(currentPosition);
